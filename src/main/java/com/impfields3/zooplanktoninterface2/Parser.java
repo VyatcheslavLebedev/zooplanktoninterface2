@@ -35,7 +35,7 @@ public class Parser {
         double x = XMIN;
         double stepForX = (XMAX-XMIN)/249;
 
-        for (int i = 0; i < 249; i++){
+        for (int i = 0; i < 100; i++){
             parser.addVariable("x",x);
             parser.parseExpression(ex);
             exList.add(new Point(x,parser.getValue()));
@@ -53,9 +53,9 @@ public class Parser {
         List<Point> stList = new ArrayList<>();
 
         double t = TMIN;
-        double stepForT = (TMAX -TMIN)/249;
+        double stepForT = (TMAX -TMIN)/100;
 
-        for(int i = 0;i < 249;i++){
+        for(int i = 0;i < 100;i++){
             parser.addVariable("t",t);
             parser.parseExpression(st);
             stList.add(new Point(t,parser.getValue()));

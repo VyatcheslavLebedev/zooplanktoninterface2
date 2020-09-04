@@ -305,7 +305,7 @@ public class MainInterface extends javax.swing.JFrame {
            XYSeries GxGraphicJ = new XYSeries("Gx");
            XYSeries SxGraphicJ = new XYSeries("Sx");
            XYSeries StGraphicJ = new XYSeries("St");
-           for (int i = 0; i<249; i++){
+           for (int i = 0; i<100; i++){
                Point p = gl.getExList().get(i);
                ExGraphicJ.add(p.getX(),p.getY());
                p = gl.getGxList().get(i);
@@ -358,7 +358,7 @@ public class MainInterface extends javax.swing.JFrame {
                XYSeries GxGraphicJ = new XYSeries("Gx");
                XYSeries SxGraphicJ = new XYSeries("Sx");
                XYSeries StGraphicJ = new XYSeries("St");
-               for (int i = 0; i<249; i++){
+               for (int i = 0; i<100; i++){
                    Point p = gl.getExList().get(i);
                    ExGraphicJ.add(p.getX(),p.getY());
                    p = gl.getGxList().get(i);

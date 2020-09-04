@@ -1,6 +1,7 @@
 package com.impfields3.zooplanktoninterface2;
 
 import org.deeplearning4j.nn.multilayer.MultiLayerNetwork;
+import org.nd4j.common.io.ClassPathResource;
 import org.nd4j.linalg.api.ndarray.INDArray;
 import org.nd4j.linalg.dataset.api.DataSet;
 import org.nd4j.linalg.factory.Nd4j;
@@ -17,29 +18,29 @@ public class NeuralNetwork {
        model = MultiLayerNetwork.load(net,true);
        alpha = (alpha-1)/49;
        gamma = (gamma-1)/(50-1);
-       double [] array = new double[1000];
-       for (int i = 0; i<249; i++){
+       double [] array = new double[404];
+       for (int i = 0; i<100; i++){
            array[i] = gln.getExList().get(i).getY();
        }
 
-       for (int i = 249; i<498; i++){
-           array[i] = gln.getSxlist().get(i - 249).getY();
+       for (int i = 100; i < 200; i++){
+           array[i] = gln.getSxlist().get(i - 100).getY();
        }
 
-       for (int i = 498; i< 747; i++){
-           array[i] = gln.getStList().get(i-498).getY();
+       for (int i = 200; i < 300; i++){
+           array[i] = gln.getStList().get(i-200).getY();
        }
 
-       for (int i = 747; i<996; i++){
-           array[i] = gln.getGxList().get(i - 747).getY();
+       for (int i = 300; i<400; i++){
+           array[i] = gln.getGxList().get(i - 300).getY();
        }
 
-       array[996] = alpha;
-       array[997] = beta;
-       array[998] = sigma;
-       array[999] = gamma;
+       array[400] = alpha;
+       array[401] = beta;
+       array[402] = sigma;
+       array[403] = gamma;
 
-       int[] shape = {1,1000};
+       int[] shape = {1,404};
        INDArray indArray = Nd4j.create(array,shape);
 
        //INDArray output = model.output(indArray);
