@@ -18,6 +18,8 @@ public class NeuralNetwork {
        model = MultiLayerNetwork.load(net,true);
        alpha = (alpha-1)/49;
        gamma = (gamma-1)/(50-1);
+       beta = (beta- 0.01)/(0.1-0.01);
+       sigma = (sigma - 0.01)/(0.1-0.01);
        double [] array = new double[404];
        for (int i = 0; i<100; i++){
            array[i] = gln.getExList().get(i).getY();
